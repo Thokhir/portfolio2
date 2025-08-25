@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZl6oD8p3ZitCgomz1D4Vbu/MwCj6y2Tq2bah0bKwS4O4M0jgw/x9HvpZ2aSWTXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preload" href="assets/water-quality-dashboard.mp4" as="video" type="video/mp4">
   <link rel="preload" href="assets/chennai-reservoirs.mp4" as="video" type="video/mp4">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
   <header class="header">
@@ -33,18 +34,18 @@
 
   <section id="hero" class="hero">
     <div class="overlay"></div>
-    <div class="container hero-content text-center">
+    <div class="container hero-content text-center" data-aos="fade-up">
       <h1>Dr. Thokhir Basha Shaik</h1>
-      <p class="hero-subtext">11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics for Pharma, Biotech, and Environmental health.</p>
-      <a href="#contact" class="btn btn-cta">Get in Touch</a>
+      <p class="hero-subtext" data-aos="fade-up" data-aos-delay="200">11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics for Pharma, Biotech, and Environmental health.</p>
+      <a href="#contact" class="btn btn-cta" data-aos="fade-up" data-aos-delay="400">Get in Touch</a>
     </div>
   </section>
 
   <main>
     <section id="skills" class="section">
       <div class="container">
-        <h2>Skills</h2>
-        <div class="grid two-cols">
+        <h2 data-aos="fade-up">Skills</h2>
+        <div class="grid two-cols" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <h3>Data Analysis & Visualization</h3>
             <p>SQL (PostgreSQL), Power BI (DAX, Power Query), Python (Pandas, scikit-learn), R (tidyverse, ggplot2), PCA, ANOVA, regression.</p>
@@ -63,9 +64,9 @@
 
     <section id="projects" class="section alt">
       <div class="container">
-        <h2>Projects</h2>
-        <input type="text" id="projectSearch" placeholder="Search projects..." class="project-search">
-        <div id="projectList" class="grid two-cols">
+        <h2 data-aos="fade-up">Projects</h2>
+        <input type="text" id="projectSearch" placeholder="Search projects..." class="project-search" data-aos="fade-up" data-aos-delay="200">
+        <div id="projectList" class="grid two-cols" data-aos="fade-up" data-aos-delay="300">
           <div class="card project" data-tags="excel water quality">
             <h3>Water Quality Dashboard (Pre vs Post-Monsoon)</h3>
             <p>Excel dashboard across 8 stations with pies, bars, and rankings for DWQI, IWQI, AWQI, LWQI. Identified tail-end deterioration pre-monsoon and dilution post-monsoon.</p>
@@ -121,8 +122,8 @@
 
     <section id="experience" class="section">
       <div class="container">
-        <h2>Experience</h2>
-        <div class="grid two-cols">
+        <h2 data-aos="fade-up">Experience</h2>
+        <div class="grid two-cols" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <h3>Research Associate - SRKR Engineering College</h3>
             <p class="text-sm text-muted">Nov 2020 - Present, India</p>
@@ -156,8 +157,8 @@
 
     <section id="services" class="section alt">
       <div class="container">
-        <h2>Services</h2>
-        <div class="grid two-cols">
+        <h2 data-aos="fade-up">Services</h2>
+        <div class="grid two-cols" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <h3>Data Analysis & Dashboards</h3>
             <p>Interactive Power BI reports, ETL workflows, and KPI design.</p>
@@ -180,8 +181,8 @@
 
     <section id="education" class="section">
       <div class="container">
-        <h2>Education</h2>
-        <div class="grid two-cols">
+        <h2 data-aos="fade-up">Education</h2>
+        <div class="grid two-cols" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <h3>Ph.D., Biotechnology</h3>
             <p>CSIR-IICT & Acharya Nagarjuna University - 2019, Hyderabad, India</p>
@@ -204,8 +205,8 @@
 
     <section id="innovations" class="section alt">
       <div class="container">
-        <h2>Innovative Works & Products</h2>
-        <div class="grid two-cols">
+        <h2 data-aos="fade-up">Innovative Works & Products</h2>
+        <div class="grid two-cols" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <h3>Social Vulnerability Index (SVI) Model</h3>
             <p>Developed a Python-based SVI model integrating physico-chemical and biological water quality data for environmental policy.</p>
@@ -240,14 +241,14 @@
 
     <section id="contact" class="section">
       <div class="container text-center">
-        <h2>Contact</h2>
-        <p class="text-muted">Open to roles and freelance engagements. Share a brief, and I’ll respond quickly.</p>
-        <div class="contact-links">
+        <h2 data-aos="fade-up">Contact</h2>
+        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">Open to roles and freelance engagements. Share a brief, and I’ll respond quickly.</p>
+        <div class="contact-links" data-aos="fade-up" data-aos-delay="300">
           <a href="mailto:sktbasha22@gmail.com"><i class="fas fa-envelope"></i> sktbasha22@gmail.com</a>
           <a href="https://wa.me/7671856965"><i class="fab fa-whatsapp"></i> +91-7671856965</a>
           <a href="https://www.linkedin.com/in/thokhir-basha-shaik-m-sc-ph-d-59498416"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" data-aos="fade-up" data-aos-delay="400">
           <input type="text" name="name" placeholder="Name" required>
           <input type="email" name="email" placeholder="Email" required>
           <textarea name="message" placeholder="Message" rows="4" required></textarea>
@@ -266,21 +267,24 @@
   <button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
   <script src="app.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
     const menuBtn = document.getElementById('menuBtn');
     const nav = document.getElementById('nav');
     menuBtn.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
 
-    // Scroll to top functionality
     const scrollTopBtn = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => {
       scrollTopBtn.classList.toggle('show', window.scrollY > 300);
     });
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    // Project search
     const search = document.getElementById('projectSearch');
     const list = document.getElementById('projectList');
     search.addEventListener('input', () => {
