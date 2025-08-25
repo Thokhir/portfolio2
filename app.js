@@ -18,3 +18,11 @@ search.addEventListener('input', () => {
     card.style.display = (text.includes(q) || tags.includes(q)) ? '' : 'none';
   });
 });
+
+// AOS initialization
+document.addEventListener('DOMContentLoaded', (event) => {
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+});
