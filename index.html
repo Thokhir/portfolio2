@@ -10,9 +10,6 @@
   <link rel="preload" href="assets/chennai-reservoirs.mp4" as="video" type="video/mp4">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
-  <!-- Replace GA_MEASUREMENT_ID with your Analytics ID if needed -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script> -->
 </head>
 <body>
   <header class="site-header">
@@ -21,6 +18,7 @@
       <nav class="nav">
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#innovations">Innovations</a>
         <a href="#experience">Experience</a>
         <a href="#services">Services</a>
         <a href="#education">Education</a>
@@ -59,31 +57,39 @@
         </div>
       </div>
     </section>
-
+    
     <section id="projects" class="section alt">
       <div class="container">
         <div class="section-head">
           <h2>Projects</h2>
           <input id="projectSearch" class="search" placeholder="Search projects... (e.g., Power BI, Docking, DWQI)" />
         </div>
-
+        
         <div id="projectList" class="grid project-cards">
           <article class="card project" data-tags="excel dwqi iwqi awqi lwqi water quality monsoon">
             <h3>Water Quality Dashboard (Pre vs Post‑Monsoon)</h3>
-            <p>Excel dashboard across 8 stations with pies, bars, and station‑wise rankings for DWQI, IWQI, AWQI, and LWQI. Identified tail‑end deterioration pre‑monsoon and dilution post‑monsoon.</p>
+            <p>An Excel dashboard analyzing water quality across 8 stations, revealing how pollution patterns shift with the monsoon season and affect drinking, irrigation, and livestock water. The project successfully rejected the null hypothesis, demonstrating significant seasonal variation.</p>
             <div class="media">
               <video controls preload="metadata" poster="assets/empirical-vs-ideal.png">
                 <source src="assets/water-quality-dashboard.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              <img src="assets/empirical-vs-ideal.png" alt="Ideal vs Empirical distributions" />
             </div>
-            <div class="tags"><span>Excel</span><span>DWQI</span><span>IWQI</span></div>
+            <div class="tags"><span>Excel</span><span>Water Quality</span><span>Hypothesis Testing</span></div>
           </article>
 
-          <article class="card project" data-tags="power bi time series chennai reservoirs 2011">
+          <article class="card project" data-tags="excel statistics data distribution null hypothesis">
+            <h3>Statistical Analysis of Water Quality Data</h3>
+            <p>A statistical deep dive into the water quality dataset to test the null hypothesis, revealing significant seasonal variation. The analysis used bell curves to visualize data distribution, showing that post-monsoon data was less distributed from the mean compared to pre-monsoon.</p>
+            <div class="media">
+              <img src="assets/empirical-vs-ideal.png" alt="Ideal vs Empirical distributions" />
+            </div>
+            <div class="tags"><span>Statistics</span><span>Data Distribution</span><span>Hypothesis Testing</span></div>
+          </article>
+          
+          <article class="card project" data-tags="power bi time series chennai reservoirs 2005 2019">
             <h3>Chennai Reservoir Water Levels (2005–2019)</h3>
-            <p>Power BI dashboard with filters and cards; shows peak around 2011 and notable decline by 2019 across Chembarambakkam, Redhills, Cholavaram, and Poondi.</p>
+            <p>A Power BI dashboard created from public Kaggle data, featuring interactive filters to visualize yearly and monthly water levels for Chennai's four major reservoirs. The project highlights a peak in 2011 and a subsequent decline by 2019.</p>
             <div class="media">
               <video controls preload="metadata">
                 <source src="assets/chennai-reservoirs.mp4" type="video/mp4" />
@@ -92,11 +98,87 @@
             </div>
             <div class="tags"><span>Power BI</span><span>Time Series</span></div>
           </article>
+
+          <article class="card project" data-tags="data analysis health wellness age groups stress sleep heart rate">
+            <h3>Health and Wellness Trends (Age Group Analysis)</h3>
+            <p>An insightful analysis of a Kaggle lifestyle dataset to uncover key health metrics like stress, sleep quality, heart rate, and physical activity across different age groups and genders. The findings can help in tailoring personalized health interventions.</p>
+            <div class="media">
+              <img src="assets/age-group-health.png" alt="Health metrics by age and gender" />
+            </div>
+            <div class="tags"><span>Data Analysis</span><span>HealthTech</span><span>Lifestyle</span></div>
+          </article>
+
+          <article class="card project" data-tags="ai cheminformatics herbicides grok chatgpt gemini swissadme">
+            <h3>AI vs. Reality: Analyzing Herbicide Molecules</h3>
+            <p>A comparative study using AI tools (Grok, ChatGPT, Gemini) and professional cheminformatics platforms (ChemDraw, SwissADME) to analyze key molecular descriptors of six commercial herbicides. The project revealed which AI tools provide the most reliable data for early-stage molecule design.</p>
+            <div class="media">
+              <img src="assets/ai-vs-reality-matrix.png" alt="AI vs Reality Comparison Matrix" />
+            </div>
+            <div class="tags"><span>AI/ML</span><span>Cheminformatics</span><span>AgriTech</span></div>
+          </article>
+
+          <article class="card project" data-tags="ai herbicides molecular modeling qsar power bi">
+            <h3>AI-Designed Herbicides (Part 1)</h3>
+            <p>The first part of a project to design three next-gen herbicide molecules using AI. The project used computational tools to analyze molecular descriptors, plant uptake, and QSAR-based toxicity, with results visualized in an interactive Power BI dashboard.</p>
+            <div class="media">
+              <video controls preload="metadata">
+                <source src="assets/ai-herbicides-part1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="tags"><span>AI/ML</span><span>Cheminformatics</span><span>QSAR</span></div>
+          </article>
+
+          <article class="card project" data-tags="ai herbicides molecular docking swissdock autodock vina python">
+            <h3>AI-Designed Herbicides (Part 2)</h3>
+            <p>The second part of the AI-herbicide project, focusing on molecular docking studies. It compared the binding energies of the AI-designed molecules against four protein targets using SwissDock and a Python script, demonstrating their potential for multi-target weed control.</p>
+            <div class="media">
+              <img src="assets/docking-visualization.png" alt="Molecular docking visualization" />
+            </div>
+            <div class="tags"><span>Cheminformatics</span><span>Molecular Docking</span><span>Python</span></div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="innovations" class="section">
+      <div class="container">
+        <h2>Innovations</h2>
+        <div class="grid cards">
+          <div class="card">
+            <h3>Organic Aquaculture Feed</h3>
+            <p>Developed a natural shrimp and fish feed from food waste, with promising field trials, ready for market deployment.</p>
+          </div>
+          <div class="card">
+            <h3>Custom Feed-Making Machine</h3>
+            <p>Designed and fabricated a specialized machine to optimize the production of the organic aquaculture feed.</p>
+          </div>
+          <div class="card">
+            <h3>Aquaculture Probiotic</h3>
+            <p>Formulated a novel probiotic to enhance sustainability in aquaculture, currently undergoing field trials.</p>
+          </div>
+          <div class="card">
+            <h3>Self-Sealing Concrete</h3>
+            <p>Developed a new concrete formulation with self-sealing properties, currently in progress for various engineering applications.</p>
+          </div>
+          <div class="card">
+            <h3>Smart Auto Agri Spray Device</h3>
+            <p>Engineered a solar-powered, mobile-operated device for spraying liquid and solid fertilizers/pesticides. Prototype is in development.</p>
+          </div>
+          <div class="card">
+            <h3>M-SIP Device (Microbial Detection)</h3>
+            <p>Initiated the development of a microbial detection device for drinking water, which delivers results directly to a mobile device. In primary development stage.</p>
+          </div>
+          <div class="card">
+            <h3>Portable Water Purifier Sipper</h3>
+            <p>A new instant water purifier designed for bottle caps, ideal for emergency use during floods or for travelers. Progressing to commercialization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section alt">
       <div class="container">
         <h2>Experience</h2>
         <div class="timeline">
@@ -130,7 +212,7 @@
       </div>
     </section>
 
-    <section id="services" class="section alt">
+    <section id="services" class="section">
       <div class="container">
         <h2>Services</h2>
         <div class="grid cards">
@@ -142,7 +224,7 @@
       </div>
     </section>
 
-    <section id="education" class="section">
+    <section id="education" class="section alt">
       <div class="container">
         <h2>Education</h2>
         <div class="grid cards">
