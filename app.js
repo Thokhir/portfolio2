@@ -1,7 +1,7 @@
 // Mobile nav
 document.getElementById('menuBtn').addEventListener('click', () => {
   const nav = document.querySelector('.nav');
-  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+  nav.classList.toggle('is-open');
 });
 
 // Year
@@ -16,5 +16,13 @@ search.addEventListener('input', () => {
     const text = card.innerText.toLowerCase();
     const tags = card.getAttribute('data-tags') || '';
     card.style.display = (text.includes(q) || tags.includes(q)) ? '' : 'none';
+  });
+});
+
+// AOS initialization
+document.addEventListener('DOMContentLoaded', (event) => {
+  AOS.init({
+    duration: 1000,
+    once: true,
   });
 });
