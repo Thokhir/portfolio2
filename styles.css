@@ -22,7 +22,7 @@ body {
 }
 
 img, video {
-  max-width: 100%;
+  max-width: 20%;
   height: auto;
   display: block;
   border-radius: 8px;
@@ -196,12 +196,12 @@ img, video {
   border-radius: 8px;
   overflow: hidden;
   position: relative;
-  max-width: 45%;
+  max-width: 25%;
   margin: 0 auto;
 }
 
 .project .media img, .project .media video {
-  width: 100%;
+  width: 20%;
   height: auto;
   transition: transform 0.3s ease;
   border: 1px solid #e5e7eb;
