@@ -23,7 +23,7 @@ body {
 
 img, video {
   max-width: 20%;
-  height: auto;
+  height: 20%;
   display: block;
   border-radius: 8px;
 }
@@ -202,7 +202,7 @@ img, video {
 
 .project .media img, .project .media video {
   width: 20%;
-  height: auto;
+  height: 25%;
   transition: transform 0.3s ease;
   border: 1px solid #e5e7eb;
   border-radius: 14px;
@@ -278,8 +278,8 @@ img, video {
 
 .modal-content img, .modal-content video {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 20%;
+  max-height: 20%;
   width: auto;
   height: auto;
 }
@@ -296,7 +296,7 @@ img, video {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 68px) {
   .nav {
     display: none;
     flex-direction: column;
