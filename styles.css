@@ -235,19 +235,20 @@ a:hover {
 }
 
 .media-container {
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* two equal columns */
+  gap: 10px; /* spacing between video and image */
+  align-items: start;
 }
 
-.media-container img {
-  border-radius: var(--border-radius);
-  width: 100%;
-}
+.media-container img,
 .media-container video {
+  width: 100%;        /* each takes full width of its column */
+  height: auto;       /* keep aspect ratio */
   border-radius: var(--border-radius);
-  width: 100%;
-  height: auto;
-  display: block;
+  object-fit: cover;  /* prevents weird stretching */
 }
+
 .project {
   display: flex;
   flex-direction: column;
