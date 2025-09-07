@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Thokhir Basha Shaik — Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Thokhir Basha Shaik - Portfolio</title>
+  <meta name="description" content="Portfolio of Dr. Thokhir Basha Shaik, a life sciences expert in bioinformatics, data analytics, and biotechnology with innovative projects, prototypes, and products.">
+  <meta name="keywords" content="bioinformatics, biotechnology, data analytics, water quality, drug discovery, innovative works, prototypes, products">
+  <meta name="author" content="Dr. Thokhir Basha Shaik">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
 </head>
 <body>
-  <!-- HEADER -->
   <header class="header sticky">
     <div class="container header-inner">
       <h1 class="brand">Dr. Thokhir Basha Shaik</h1>
-      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <nav id="nav" class="nav">
         <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
         <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
@@ -27,51 +29,50 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero Banner -->
   <section id="hero" class="hero">
     <div class="overlay"></div>
     <div class="container hero-content text-center">
       <h1>Dr. Thokhir Basha Shaik</h1>
       <p class="hero-subtext">11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics for Pharma, Biotech, and Environmental Health.</p>
-      <a href="#contact" class="btn btn-cta"><i class="fas fa-paper-plane"></i> Get in Touch</a>
-      <a href="assets/ThokhirBashaShaik_Resume.pdf" class="btn btn-secondary" download><i class="fas fa-download"></i> Download Resume</a>
+      <a href="#contact" class="btn btn-cta">Get in Touch</a>
+      <a href="assets/ThokhirBashaShaik_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
     </div>
   </section>
 
   <main>
-    <!-- SKILLS -->
+    <!-- Skills -->
     <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+        <h2><i class="fas fa-tools"></i> Skills</h2>
         <div class="grid three-cols">
           <div class="card">
             <h3>Data Analysis & Visualization</h3>
-            <ul class="list">
+            <ul>
               <li>SQL (PostgreSQL)</li>
               <li>Power BI (DAX, Power Query)</li>
               <li>Python (Pandas, scikit-learn)</li>
               <li>R (tidyverse, ggplot2)</li>
+              <!-- Example of adding new bullet point -->
               <li>Advanced Excel (Pivot Tables, VBA)</li>
             </ul>
             <div class="skill-bar"><span style="width: 85%">Expert</span></div>
           </div>
           <div class="card">
             <h3>Bio/Cheminformatics</h3>
-            <ul class="list">
-              <li>AutoDock, SwissDock</li>
-              <li>ADMET/QSAR</li>
-              <li>PyMOL, ChimeraX</li>
-              <li>SwissADME, NCBI, UniProt, PDB</li>
+            <ul>
+              <li>Docking (AutoDock, SwissDock)</li>
+              <li>ADMET, QSAR</li>
+              <li>PyMOL, ChimeraX, SwissADME</li>
             </ul>
             <div class="skill-bar"><span style="width: 80%">Advanced</span></div>
           </div>
           <div class="card">
             <h3>Machine Learning & R&D</h3>
-            <ul class="list">
+            <ul>
               <li>Regression, ANN, Random Forest</li>
               <li>Experimental Design & QC Protocols</li>
               <li>SOP Development</li>
-              <li>Cheminformatics Pipelines</li>
             </ul>
             <div class="skill-bar"><span style="width: 75%">Advanced</span></div>
           </div>
@@ -79,78 +80,107 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-<section id="projects" class="section alt">
-  <div class="container">
-    <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
-    <input id="projectSearch" class="project-search" type="text" placeholder="Search projects..." />
-
-    <div id="projectList" class="grid two-cols">
-      <div class="card project" data-tags="excel water quality">
-        <h3>Water Quality Dashboard (Pre vs Post-Monsoon)</h3>
-        <p>Excel dashboard across 8 stations with pies, bars, and rankings for DWQI, IWQI, AWQI, LWQI. <strong>Impact:</strong> Identified tail-end deterioration pre-monsoon and dilution post-monsoon.</p>
-        <video controls poster="assets/project1-thumb.jpg">
-          <source src="assets/water-quality-dashboard.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="card project" data-tags="statistics water quality">
-        <h3>Statistical Analysis of Water Quality Data</h3>
-        <p>Analyzed seasonal variations, rejected null hypothesis, visualized with bell curves for DWQI, IWQI, AWQI, LWQI. <strong>Impact:</strong> Captured seasonal risk patterns.</p>
-        <img src="assets/empirical-vs-ideal.png" alt="Statistical Analysis" />
-      </div>
-
-      <div class="card project" data-tags="power bi water levels">
-        <h3>Chennai Reservoir Water Levels (2005–2019)</h3>
-        <p>Power BI dashboard with filters, showing peak in 2011 and decline by 2019 across four reservoirs. <strong>Impact:</strong> Informed long-term water supply planning.</p>
-        <video controls poster="assets/project3-thumb.jpg">
-          <source src="assets/chennai-reservoirs.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="card project" data-tags="health trends analysis">
-        <h3>Health and Wellness Trends Across Age Groups</h3>
-        <p>Analyzed lifestyle data for stress, sleep, heart rate, and activity across ages 18–90. <strong>Impact:</strong> Identified vulnerable demographics for intervention.</p>
-        <video controls poster="assets/project4-thumb.jpg">
-          <source src="assets/Health trends.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="card project" data-tags="ai herbicide analysis">
-        <h3>AI vs Reality: Herbicide Analysis</h3>
-        <p>Compared AI tools (Grok, ChatGPT, Gemini) with SwissADME for herbicide properties. <strong>Impact:</strong> Highlighted prediction discrepancies.</p>
-        <img src="assets/Ai vs Reality.png" alt="Herbicide Analysis" />
-      </div>
-
-      <div class="card project" data-tags="ai herbicide design">
-        <h3>AI Herbicide Design – Part 1</h3>
-        <p>Designed AI-based herbicides, analyzed descriptors and toxicity with Power BI. <strong>Impact:</strong> Streamlined candidate selection.</p>
-        <video controls poster="assets/project6-thumb.jpg">
-          <source src="assets/Herbicide-part1.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="card project" data-tags="ai herbicide binding">
-        <h3>AI Herbicide Design – Part 2</h3>
-        <p>Compared binding energies of AI-designed herbicides using SwissDock & Python. <strong>Impact:</strong> Prioritized high-affinity compounds.</p>
-        <img src="assets/Herbicide part2.png" alt="Herbicide Design Part 2" />
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
+    <!-- Projects -->
+    <section id="projects" class="section alt">
       <div class="container">
-        <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
-        <div class="timeline">
-          <!-- (Three timeline items as previously listed in code) -->
+        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+        <input type="text" id="projectSearch" placeholder="Search projects..." class="project-search">
+        <div id="projectList" class="grid two-cols">
+          <div class="card project" data-tags="excel water quality">
+            <h3>Water Quality Dashboard</h3>
+            <p>Excel dashboard across 8 stations with KPIs. <strong>Impact:</strong> Enabled 30% faster insights into pre- vs post-monsoon deterioration trends.</p>
+            <img src="assets/project1-thumb.jpg" alt="Water Quality Dashboard">
+          </div>
+          <div class="card project" data-tags="statistics">
+            <h3>Statistical Analysis of Water Quality</h3>
+            <p>Analyzed seasonal variations with ANOVA & bell curves. <strong>Impact:</strong> Validated water safety risks across seasons.</p>
+            <img src="assets/empirical-vs-ideal.png" alt="Statistical Analysis">
+          </div>
+          <div class="card project" data-tags="power bi reservoirs">
+            <h3>Chennai Reservoir Water Levels</h3>
+            <p>Power BI dashboard of 14 years. <strong>Impact:</strong> Informed water policy decisions for Chennai planners.</p>
+            <img src="assets/project3-thumb.jpg" alt="Chennai Reservoir Dashboard">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES, EDUCATION, INNOVATIONS, CONTACT sections same as above... -->
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2><i class="fas fa-briefcase"></i> Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Research Associate - SRKR Engineering College</h3>
+            <p class="text-muted">2020 – Present</p>
+            <p>Led dashboards & ML model development for water quality; developed Python-based Social Vulnerability Index.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Junior Research Scientist - Eesavyasa Technologies</h3>
+            <p class="text-muted">2017 – 2019</p>
+            <p>Prototyped 6 rapid water testing kits & innovative fumigation devices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2><i class="fas fa-cogs"></i> Services</h2>
+        <div class="grid two-cols">
+          <div class="card"><h3>Data Analysis</h3><p>Interactive dashboards, KPI design, ETL workflows.</p></div>
+          <div class="card"><h3>Machine Learning</h3><p>Feature engineering, model selection, predictions.</p></div>
+          <div class="card"><h3>Cheminformatics</h3><p>Docking, QSAR/ADMET, molecular descriptors.</p></div>
+          <div class="card"><h3>R&D Support</h3><p>Process optimization, SOPs, lab management.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <ul class="education-list">
+          <li><strong>Ph.D. Biotechnology</strong>, CSIR-IICT (2019)</li>
+          <li><strong>M.Sc. Biotechnology</strong>, Bharathidasan University (2006)</li>
+          <li><strong>B.Sc. Microbiology, Biochemistry, Chemistry</strong>, Nagarjuna University (2002)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Innovations -->
+    <section id="innovations" class="section alt">
+      <div class="container">
+        <h2><i class="fas fa-lightbulb"></i> Innovations</h2>
+        <div class="grid two-cols">
+          <div class="card"><h3>Social Vulnerability Index Model</h3><p>Python-based integration of water quality data for policy insights.</p></div>
+          <div class="card"><h3>AI-Driven Herbicide Design</h3><p>Designed herbicides with improved docking scores and toxicity profiles.</p></div>
+          <div class="card"><h3>Microemulsion Delivery System</h3><p>5x more effective anticancer drug delivery model during Ph.D.</p></div>
+          <!-- Example of adding new innovation card -->
+          <div class="card"><h3>Ozone-Based Vegetable Washer Prototype</h3><p>Developed prototype for pesticide removal in vegetables.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container text-center">
+        <h2><i class="fas fa-envelope"></i> Contact</h2>
+        <p class="text-muted">Open to roles and freelance opportunities.</p>
+        <div class="contact-links">
+          <a class="btn" href="mailto:sktbasha22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a class="btn" href="https://wa.me/7671856965"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a class="btn" href="https://www.linkedin.com/in/thokhir-basha-shaik-m-sc-ph-d-59498416"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Message" rows="4" required></textarea>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -159,7 +189,32 @@
     </div>
   </footer>
 
-  <button id="scrollTop" class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
   <script src="app.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+
+    // Scroll to top
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Project search
+    const search = document.getElementById('projectSearch');
+    const list = document.getElementById('projectList');
+    search.addEventListener('input', () => {
+      const q = search.value.toLowerCase();
+      list.querySelectorAll('.project').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const tags = card.getAttribute('data-tags') || '';
+        card.style.display = (text.includes(q) || tags.includes(q)) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
