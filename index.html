@@ -1,81 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Dr. Thokhir Basha Shaik - Portfolio</title>
-  <meta name="description" content="Portfolio of Dr. Thokhir Basha Shaik, a life sciences expert in bioinformatics, data analytics, and biotechnology with innovative projects, prototypes, and products.">
-  <meta name="keywords" content="bioinformatics, biotechnology, data analytics, water quality, drug discovery, innovative works, prototypes, products">
-  <meta name="author" content="Dr. Thokhir Basha Shaik">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <meta name="description" content="Portfolio of Dr. Thokhir Basha Shaik — bioinformatics, data analytics, biotechnology, and R&D." />
+  <meta name="keywords" content="bioinformatics, biotechnology, data analytics, water quality, drug discovery" />
+  <meta name="author" content="Dr. Thokhir Basha Shaik" />
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZl6oD8p3ZitCgomz1D4Vbu/MwCj6y2Tq2bah0bKwS4O4M0jgw/x9HvpZ2aSWTXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Preload important media (keep names unchanged) -->
+  <link rel="preload" href="assets/water-quality-dashboard.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="assets/chennai-reservoirs.mp4" as="video" type="video/mp4">
+  <link rel="preload" href="assets/Herbicide-part1.mp4" as="video" type="video/mp4">
+
+  <!-- Google Analytics (replace G-XXXXXXXXXX with your GA4 measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body>
-  <header class="header sticky">
+  <!-- Header -->
+  <header class="header" role="banner">
     <div class="container header-inner">
       <h1 class="brand">Dr. Thokhir Basha Shaik</h1>
-      <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation menu">
-        <i class="fas fa-bars"></i>
+
+      <button id="menuBtn" class="menu-btn" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" aria-hidden="true"></i>
       </button>
-      <nav id="nav" class="nav">
-        <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-        <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#services"><i class="fas fa-cogs"></i> Services</a>
-        <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-        <a href="#innovations"><i class="fas fa-lightbulb"></i> Innovations</a>
-        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+
+      <nav id="nav" class="nav" role="navigation">
+        <a href="#skills"><i class="fas fa-tools" aria-hidden="true"></i> Skills</a>
+        <a href="#projects"><i class="fas fa-project-diagram" aria-hidden="true"></i> Projects</a>
+        <a href="#experience"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</a>
+        <a href="#services"><i class="fas fa-cogs" aria-hidden="true"></i> Services</a>
+        <a href="#education"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</a>
+        <a href="#innovations"><i class="fas fa-lightbulb" aria-hidden="true"></i> Innovations</a>
+        <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section id="hero" class="hero">
-    <div class="overlay"></div>
-    <div class="container hero-content text-center">
-      <h1>Dr. Thokhir Basha Shaik</h1>
-      <p class="hero-subtext">11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics for Pharma, Biotech, and Environmental Health.</p>
-      <a href="#contact" class="btn btn-cta">Get in Touch</a>
-      <a href="assets/ThokhirBashaShaik_Resume.pdf" class="btn btn-secondary" download>Download Resume</a>
+  <!-- Hero -->
+  <section id="hero" class="hero" role="region" aria-label="Introduction">
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-inner">
+        <h2 class="reveal">Dr. Thokhir Basha Shaik</h2>
+        <p class="hero-subtext reveal">11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics for Pharma, Biotech, and Environmental Health.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-cta" href="#contact"><i class="fas fa-paper-plane" aria-hidden="true"></i> Get in Touch</a>
+          <a class="btn btn-primary" href="assets/ThokhirBashaShaik_Resume.pdf" download><i class="fas fa-download" aria-hidden="true"></i> Download Resume</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main>
+  <main id="main">
     <!-- Skills -->
     <section id="skills" class="section">
       <div class="container">
-        <h2><i class="fas fa-tools"></i> Skills</h2>
+        <h3 class="section-title"><i class="fas fa-tools" aria-hidden="true"></i> Skills</h3>
         <div class="grid three-cols">
-          <div class="card">
-            <h3>Data Analysis & Visualization</h3>
+          <article class="card reveal">
+            <h4>Data Analysis & Visualization</h4>
             <ul>
               <li>SQL (PostgreSQL)</li>
               <li>Power BI (DAX, Power Query)</li>
               <li>Python (Pandas, scikit-learn)</li>
               <li>R (tidyverse, ggplot2)</li>
-              <!-- Example of adding new bullet point -->
-              <li>Advanced Excel (Pivot Tables, VBA)</li>
             </ul>
-            <div class="skill-bar"><span style="width: 85%">Expert</span></div>
-          </div>
-          <div class="card">
-            <h3>Bio/Cheminformatics</h3>
+            <div class="skill-bar"><span style="width:85%"></span></div>
+          </article>
+
+          <article class="card reveal">
+            <h4>Bio / Cheminformatics</h4>
             <ul>
-              <li>Docking (AutoDock, SwissDock)</li>
-              <li>ADMET, QSAR</li>
-              <li>PyMOL, ChimeraX, SwissADME</li>
+              <li>AutoDock, SwissDock</li>
+              <li>ADMET / QSAR</li>
+              <li>PyMOL, ChimeraX</li>
             </ul>
-            <div class="skill-bar"><span style="width: 80%">Advanced</span></div>
-          </div>
-          <div class="card">
-            <h3>Machine Learning & R&D</h3>
+            <div class="skill-bar"><span style="width:80%"></span></div>
+          </article>
+
+          <article class="card reveal">
+            <h4>Machine Learning & R&amp;D</h4>
             <ul>
               <li>Regression, ANN, Random Forest</li>
-              <li>Experimental Design & QC Protocols</li>
+              <li>Experimental Design & QC</li>
               <li>SOP Development</li>
             </ul>
-            <div class="skill-bar"><span style="width: 75%">Advanced</span></div>
-          </div>
+            <div class="skill-bar"><span style="width:75%"></span></div>
+          </article>
         </div>
       </div>
     </section>
@@ -83,24 +111,79 @@
     <!-- Projects -->
     <section id="projects" class="section alt">
       <div class="container">
-        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-        <input type="text" id="projectSearch" placeholder="Search projects..." class="project-search">
+        <h3 class="section-title"><i class="fas fa-project-diagram" aria-hidden="true"></i> Projects</h3>
+
+        <input id="projectSearch" class="project-search" type="text" placeholder="Search projects..." aria-label="Search projects">
+
         <div id="projectList" class="grid two-cols">
-          <div class="card project" data-tags="excel water quality">
-            <h3>Water Quality Dashboard</h3>
-            <p>Excel dashboard across 8 stations with KPIs. <strong>Impact:</strong> Enabled 30% faster insights into pre- vs post-monsoon deterioration trends.</p>
-            <img src="assets/project1-thumb.jpg" alt="Water Quality Dashboard">
-          </div>
-          <div class="card project" data-tags="statistics">
-            <h3>Statistical Analysis of Water Quality</h3>
-            <p>Analyzed seasonal variations with ANOVA & bell curves. <strong>Impact:</strong> Validated water safety risks across seasons.</p>
-            <img src="assets/empirical-vs-ideal.png" alt="Statistical Analysis">
-          </div>
-          <div class="card project" data-tags="power bi reservoirs">
-            <h3>Chennai Reservoir Water Levels</h3>
-            <p>Power BI dashboard of 14 years. <strong>Impact:</strong> Informed water policy decisions for Chennai planners.</p>
-            <img src="assets/project3-thumb.jpg" alt="Chennai Reservoir Dashboard">
-          </div>
+          <!-- KEEP ALL NAMES OF IMAGES/VIDEOS UNCHANGED -->
+          <article class="card project reveal" data-tags="excel water quality">
+            <h4>Water Quality Dashboard (Pre vs Post-Monsoon)</h4>
+            <p>Excel dashboard across 8 stations with pies, bars, and rankings for DWQI, IWQI, AWQI, LWQI. <strong>Impact:</strong> Identified tail-end deterioration pre-monsoon and dilution post-monsoon.</p>
+            <div class="media-container">
+              <video controls preload="metadata" poster="assets/project1-thumb.jpg">
+                <source src="assets/water-quality-dashboard.mp4" type="video/mp4">
+                Your browser does not support video tag.
+              </video>
+            </div>
+          </article>
+
+          <article class="card project reveal" data-tags="statistics water quality">
+            <h4>Statistical Analysis of Water Quality Data</h4>
+            <p>Analyzed seasonal variations, rejected null hypothesis, visualized with bell curves for DWQI, IWQI, AWQI, LWQI. <strong>Impact:</strong> Provided actionable seasonal risk insights.</p>
+            <div class="media-container">
+              <img src="assets/empirical-vs-ideal.png" alt="Empirical vs ideal comparison">
+            </div>
+          </article>
+
+          <article class="card project reveal" data-tags="power bi reservoirs">
+            <h4>Chennai Reservoir Water Levels (2005–2019)</h4>
+            <p>Power BI dashboard with filters, showing peak in 2011 and decline by 2019 across four reservoirs. <strong>Impact:</strong> Informed regional water planning.</p>
+            <div class="media-container">
+              <video controls preload="metadata" poster="assets/project3-thumb.jpg">
+                <source src="assets/chennai-reservoirs.mp4" type="video/mp4">
+                Your browser does not support video tag.
+              </video>
+            </div>
+          </article>
+
+          <article class="card project reveal" data-tags="health trends">
+            <h4>Health and Wellness Trends Across Age Groups</h4>
+            <p>Analyzed lifestyle indicators for stress, sleep, heart rate, and activity. <strong>Impact:</strong> Identified risk groups and recommended interventions.</p>
+            <div class="media-container">
+              <video controls preload="metadata" poster="assets/project4-thumb.jpg">
+                <source src="assets/Health trends.mp4" type="video/mp4">
+                Your browser does not support video tag.
+              </video>
+            </div>
+          </article>
+
+          <article class="card project reveal" data-tags="ai herbicide">
+            <h4>AI vs Reality: Herbicide Analysis</h4>
+            <p>Compared AI tools with SwissADME. <strong>Impact:</strong> Highlighted limitations and strengths of current AI predictions.</p>
+            <div class="media-container">
+              <img src="assets/Ai vs Reality.png" alt="AI vs SwissADME comparison">
+            </div>
+          </article>
+
+          <article class="card project reveal" data-tags="ai herbicide design">
+            <h4>AI Herbicide Design - Part 1</h4>
+            <p>Designed AI-based herbicide candidates and ran descriptor + toxicity analysis using Power BI.</p>
+            <div class="media-container">
+              <video controls preload="metadata" poster="assets/project6-thumb.jpg">
+                <source src="assets/Herbicide-part1.mp4" type="video/mp4">
+                Your browser does not support video tag.
+              </video>
+            </div>
+          </article>
+
+          <article class="card project reveal" data-tags="docking binding">
+            <h4>AI Herbicide Design - Part 2</h4>
+            <p>Compared binding energies of AI-designed herbicides using SwissDock and Python-based analysis.</p>
+            <div class="media-container">
+              <img src="assets/Herbicide part2.png" alt="Docking comparison">
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -108,17 +191,25 @@
     <!-- Experience -->
     <section id="experience" class="section">
       <div class="container">
-        <h2><i class="fas fa-briefcase"></i> Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Research Associate - SRKR Engineering College</h3>
-            <p class="text-muted">2020 – Present</p>
-            <p>Led dashboards & ML model development for water quality; developed Python-based Social Vulnerability Index.</p>
+        <h3 class="section-title"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</h3>
+        <div class="grid two-cols">
+          <div class="card reveal">
+            <h4>Research Associate - SRKR Engineering College</h4>
+            <p class="text-muted">Nov 2020 - Present</p>
+            <ul class="list">
+              <li>Commissioned analytical instruments per EU standards.</li>
+              <li>Built Power BI dashboards and led ML model selection for water quality.</li>
+              <li>Developed Social Vulnerability Index (SVI) methodology in Python.</li>
+            </ul>
           </div>
-          <div class="timeline-item">
-            <h3>Junior Research Scientist - Eesavyasa Technologies</h3>
-            <p class="text-muted">2017 – 2019</p>
-            <p>Prototyped 6 rapid water testing kits & innovative fumigation devices.</p>
+
+          <div class="card reveal">
+            <h4>Junior Research Scientist - Eesavyasa Technologies Pvt. Ltd.</h4>
+            <p class="text-muted">Nov 2017 - Apr 2019</p>
+            <ul class="list">
+              <li>Developed 6 rapid water testing kits with SOPs.</li>
+              <li>Prototyped room fumigator and ozone-based vegetable washer.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -127,12 +218,12 @@
     <!-- Services -->
     <section id="services" class="section alt">
       <div class="container">
-        <h2><i class="fas fa-cogs"></i> Services</h2>
+        <h3 class="section-title"><i class="fas fa-cogs" aria-hidden="true"></i> Services</h3>
         <div class="grid two-cols">
-          <div class="card"><h3>Data Analysis</h3><p>Interactive dashboards, KPI design, ETL workflows.</p></div>
-          <div class="card"><h3>Machine Learning</h3><p>Feature engineering, model selection, predictions.</p></div>
-          <div class="card"><h3>Cheminformatics</h3><p>Docking, QSAR/ADMET, molecular descriptors.</p></div>
-          <div class="card"><h3>R&D Support</h3><p>Process optimization, SOPs, lab management.</p></div>
+          <div class="card reveal"><h4>Data Analysis & Dashboards</h4><p>Interactive Power BI reports, ETL workflows, KPI design.</p></div>
+          <div class="card reveal"><h4>Machine Learning</h4><p>Feature engineering, model selection, predictive models.</p></div>
+          <div class="card reveal"><h4>Bio/Cheminformatics</h4><p>Docking, QSAR/ADMET, descriptor pipelines.</p></div>
+          <div class="card reveal"><h4>R&amp;D Support</h4><p>Process optimization, SOPs, experimental design.</p></div>
         </div>
       </div>
     </section>
@@ -140,11 +231,12 @@
     <!-- Education -->
     <section id="education" class="section">
       <div class="container">
-        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        <h3 class="section-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Education</h3>
         <ul class="education-list">
-          <li><strong>Ph.D. Biotechnology</strong>, CSIR-IICT (2019)</li>
-          <li><strong>M.Sc. Biotechnology</strong>, Bharathidasan University (2006)</li>
-          <li><strong>B.Sc. Microbiology, Biochemistry, Chemistry</strong>, Nagarjuna University (2002)</li>
+          <li><strong>Ph.D., Biotechnology</strong> — CSIR-IICT &amp; Acharya Nagarjuna University (2019)</li>
+          <li><strong>Drug Delivery Exchange</strong> — King’s College London (2013)</li>
+          <li><strong>M.Sc. Biotechnology</strong> — Bharathidasan University (2006)</li>
+          <li><strong>B.Sc. Microbiology, Biochemistry, Chemistry</strong> — Nagarjuna University (2002)</li>
         </ul>
       </div>
     </section>
@@ -152,13 +244,11 @@
     <!-- Innovations -->
     <section id="innovations" class="section alt">
       <div class="container">
-        <h2><i class="fas fa-lightbulb"></i> Innovations</h2>
+        <h3 class="section-title"><i class="fas fa-lightbulb" aria-hidden="true"></i> Innovations</h3>
         <div class="grid two-cols">
-          <div class="card"><h3>Social Vulnerability Index Model</h3><p>Python-based integration of water quality data for policy insights.</p></div>
-          <div class="card"><h3>AI-Driven Herbicide Design</h3><p>Designed herbicides with improved docking scores and toxicity profiles.</p></div>
-          <div class="card"><h3>Microemulsion Delivery System</h3><p>5x more effective anticancer drug delivery model during Ph.D.</p></div>
-          <!-- Example of adding new innovation card -->
-          <div class="card"><h3>Ozone-Based Vegetable Washer Prototype</h3><p>Developed prototype for pesticide removal in vegetables.</p></div>
+          <div class="card reveal"><h4>Social Vulnerability Index (SVI)</h4><p>Python-based SVI integrating physico-chemical & biological metrics for policy.</p></div>
+          <div class="card reveal"><h4>AI-Driven Herbicide Design</h4><p>AI-designed molecules with improved docking & ADMET profiles.</p></div>
+          <div class="card reveal"><h4>Microemulsion Delivery System</h4><p>Designed enhanced microemulsion for anticancer delivery.</p></div>
         </div>
       </div>
     </section>
@@ -166,55 +256,40 @@
     <!-- Contact -->
     <section id="contact" class="section">
       <div class="container text-center">
-        <h2><i class="fas fa-envelope"></i> Contact</h2>
-        <p class="text-muted">Open to roles and freelance opportunities.</p>
+        <h3 class="section-title"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</h3>
+        <p class="text-muted">Open to roles, collaborations, and consultancy.</p>
+
         <div class="contact-links">
-          <a class="btn" href="mailto:sktbasha22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-          <a class="btn" href="https://wa.me/7671856965"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a class="btn" href="https://www.linkedin.com/in/thokhir-basha-shaik-m-sc-ph-d-59498416"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a class="btn btn-primary" href="mailto:sktbasha22@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+          <a class="btn btn-primary" href="https://wa.me/7671856965"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/thokhir-basha-shaik-m-sc-ph-d-59498416" target="_blank"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
         </div>
+
+        <!-- Formspree contact form (replace your-form-id with your actual Formspree ID) -->
         <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="message" placeholder="Message" rows="4" required></textarea>
-          <button type="submit" class="btn btn-primary">Send</button>
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Email address" required>
+          </div>
+          <textarea name="message" rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send message</button>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <p>&copy; <span id="year">2025</span> Dr. Thokhir Basha Shaik • Built with HTML/CSS/JS</p>
+      <p>&copy; <span id="year"></span> Dr. Thokhir Basha Shaik • Built with HTML/CSS/JS</p>
     </div>
   </footer>
 
-  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
 
+  <!-- App JS -->
   <script src="app.js"></script>
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const nav = document.getElementById('nav');
-    menuBtn.addEventListener('click', () => nav.classList.toggle('active'));
-
-    // Scroll to top
-    const scrollTopBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
-    });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Project search
-    const search = document.getElementById('projectSearch');
-    const list = document.getElementById('projectList');
-    search.addEventListener('input', () => {
-      const q = search.value.toLowerCase();
-      list.querySelectorAll('.project').forEach(card => {
-        const text = card.innerText.toLowerCase();
-        const tags = card.getAttribute('data-tags') || '';
-        card.style.display = (text.includes(q) || tags.includes(q)) ? '' : 'none';
-      });
-    });
-  </script>
 </body>
 </html>
+
