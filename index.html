@@ -51,19 +51,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero" role="region" aria-label="Intro">
-    <div class="overlay" aria-hidden="true"></div>
-    <div class="container hero-content text-center">
-      <h1>Dr. Thokhir Basha Shaik</h1>
-      <p class="hero-subtext">
-        11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes,
-        and cheminformatics for Pharma, Biotech, and Environmental health.
-      </p>
-      <a href="#contact" class="btn btn-cta">Get in Touch</a>
-    </div>
-  </section>
-   <!-- Hero -->
+    <!-- Hero -->
   <section id="hero" class="hero" role="region" aria-label="Introduction">
     <div class="overlay" aria-hidden="true"></div>
     <div class="container hero-content">
@@ -313,16 +301,12 @@
         </div>
         <!-- modify this form HTML and place wherever you want your form -->
         <form action="https://formspree.io/f/mblaqope" method="POST">
-          <label>
-            Your email:
-            <input type="email" name="email">
-          </label>
-          <label>
-            Your message:
-            <textarea name="message"></textarea>
-          </label>
-  <!-- your other form fields go here -->
-          <button type="submit">Send</button>
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Email address" required>
+          </div>
+          <textarea name="message" rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send message</button>
         </form>
       </div>
     </section>
