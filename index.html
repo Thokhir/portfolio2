@@ -1,0 +1,413 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dr. Thokhir Basha Shaik's portfolio showcasing 11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics.">
+  <meta name="keywords" content="data analytics, bioinformatics, biotechnology, Power BI, Python, machine learning, cheminformatics, water quality, AI herbicide design">
+  <meta name="author" content="Dr. Thokhir Basha Shaik">
+  <title>Dr. Thokhir Basha Shaik | Data Analytics & Bioinformatics Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="brand">Dr. Thokhir Basha Shaik</a>
+      <button class="menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#education">Education</a>
+        <a href="#innovations">Innovations</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="headshot.jpg" alt="Dr. Thokhir Basha Shaik" class="hero-headshot">
+      <h1>Dr. Thokhir Basha Shaik</h1>
+      <p class="hero-subtext">11+ Years in Data Analytics, Bioinformatics & Biotechnology | Expert in ML Prototypes & Cheminformatics</p>
+      <a href="#contact" class="btn btn-cta">Contact Me</a>
+      <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>As a Ph.D. in Biotechnology from CSIR-IICT and Acharya Nagarjuna University, I’ve spent over a decade bridging data science and life sciences to tackle challenges in environmental health, pharmaceuticals, and biotechnology. My work spans developing AI-driven herbicide designs, building interactive Power BI dashboards for water quality, and patenting bioprocesses. Passionate about using analytics and machine learning to drive innovation, I’m open to roles and freelance opportunities where I can make an impact.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>2020–Present</span>
+          <p>Research Associate at SRKR Engineering College, leading ML and dashboard projects.</p>
+        </div>
+        <div class="timeline-item">
+          <span>2017–2019</span>
+          <p>Junior Research Scientist at Eesavyasa, developing water testing kits.</p>
+        </div>
+        <div class="timeline-item">
+          <span>2006–2016</span>
+          <p>Researcher at CSIR-IICT, collaborating with King’s College London.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section alt">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="grid two-cols">
+        <div class="card">
+          <h3><i class="fas fa-chart-bar"></i> Data Analysis & Visualization</h3>
+          <ul class="list">
+            <li title="Built water quality dashboards">SQL (PostgreSQL)</li>
+            <li title="Interactive reports for reservoirs">Power BI (DAX, Power Query)</li>
+            <li title="SVI model development">Python (Pandas, scikit-learn)</li>
+            <li title="Statistical visualizations">R (tidyverse, ggplot2)</li>
+            <li>PCA, ANOVA, regression</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-dna"></i> Bio/Cheminformatics</h3>
+          <ul class="list">
+            <li title="Herbicide binding analysis">Docking (AutoDock, SwissDock)</li>
+            <li>ADMET, QSAR</li>
+            <li title="Protein sequence analysis">BLAST, FASTA</li>
+            <li title="Molecular visualizations">PyMOL, ChimeraX</li>
+            <li>SwissADME, NCBI, UniProt, PDB</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-brain"></i> Machine Learning & R&D</h3>
+          <ul class="list">
+            <li title="Water quality models">Regression, ANN, Random Forest</li>
+            <li title="Designed experiments for kits">Experimental Design</li>
+            <li>QC Protocols, SOP Development</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <input type="text" id="project-search" class="project-search" placeholder="Search projects...">
+      <div class="grid two-cols">
+        <div class="card project">
+          <h3>Water Quality Dashboard (Pre vs Post-Monsoon)</h3>
+          <p><strong>Problem:</strong> Assess seasonal water quality changes across 8 stations.</p>
+          <p><strong>Approach:</strong> Built Excel dashboard with pies, bars, and rankings for DWQI, IWQI, AWQI, LWQI using statistical analysis.</p>
+          <p><strong>Results:</strong> Identified tail-end deterioration pre-monsoon and dilution post-monsoon, reducing analysis time by 50%.</p>
+          <div class="media-container">
+            <img src="water_quality_dashboard.jpg" alt="Water Quality Dashboard">
+          </div>
+          <a href="https://github.com/thokhir/water-quality" class="btn btn-primary">View Code</a>
+        </div>
+        <div class="card project">
+          <h3>Statistical Analysis of Water Quality Data</h3>
+          <p><strong>Problem:</strong> Quantify seasonal water quality variations.</p>
+          <p><strong>Approach:</strong> Used Python (Pandas, scipy) for ANOVA and hypothesis testing; visualized with ggplot2 bell curves.</p>
+          <p><strong>Results:</strong> Rejected null hypothesis, confirming significant seasonal differences.</p>
+          <div class="media-container">
+            <img src="water_quality_stats.jpg" alt="Water Quality Bell Curves">
+          </div>
+          <a href="https://github.com/thokhir/stats-analysis" class="btn btn-primary">View Code</a>
+        </div>
+        <div class="card project">
+          <h3>Chennai Reservoir Water Levels (2005–2019)</h3>
+          <p><strong>Problem:</strong> Visualize reservoir trends for policy decisions.</p>
+          <p><strong>Approach:</strong> Developed Power BI dashboard with dynamic filters.</p>
+          <p><strong>Results:</strong> Showed peak in 2011 and decline by 2019, informing water management.</p>
+          <div class="media-container">
+            <img src="chennai_reservoirs.jpg" alt="Chennai Reservoir Dashboard">
+          </div>
+          <a href="https://github.com/thokhir/reservoir-analysis" class="btn btn-primary">View Code</a>
+        </div>
+        <div class="card project">
+          <h3>Health and Wellness Trends Across Age Groups</h3>
+          <p><strong>Problem:</strong> Understand lifestyle impacts on health across ages 18-90.</p>
+          <p><strong>Approach:</strong> Analyzed stress, sleep, heart rate, and activity data using Python and R.</p>
+          <p><strong>Results:</strong> Identified key correlations, presented via interactive plots.</p>
+          <div class="media-container">
+            <img src="health_trends.jpg" alt="Health Trends Visualization">
+          </div>
+          <a href="https://github.com/thokhir/health-trends" class="btn btn-primary">View Code</a>
+        </div>
+        <div class="card project">
+          <h3>AI vs Reality: Herbicide Analysis</h3>
+          <p><strong>Problem:</strong> Compare AI predictions with real herbicide properties.</p>
+          <p><strong>Approach:</strong> Evaluated Grok, ChatGPT, Gemini outputs against SwissADME using Python.</p>
+          <p><strong>Results:</strong> Highlighted AI accuracy gaps, improved descriptor selection.</p>
+          <div class="media-container">
+            <img src="herbicide_analysis.jpg" alt="Herbicide Analysis Comparison">
+          </div>
+          <a href="https://github.com/thokhir/ai-herbicide" class="btn btn-primary">View Code</a>
+        </div>
+        <div class="card project">
+          <h3>AI Herbicide Design - Part 1</h3>
+          <p><strong>Problem:</strong> Design novel herbicides with optimal properties.</p>
+          <p><strong>Approach:</strong> Used AI to generate molecules, analyzed descriptors and toxicity in Power BI.</p>
+          <p><strong>Results:</strong> Shortlisted 5 high-potential candidates.</p>
+          <div class="media-container">
+            <img src="herbicide_design1.jpg" alt="AI Herbicide Dashboard">
+          </div>
+          <a href="https://github.com/thokhir/herbicide-design1" class="btn btn-primary">View Code</a>
+        </div>
+        <div class="card project">
+          <h3>AI Herbicide Design - Part 2</h3>
+          <p><strong>Problem:</strong> Optimize herbicide binding efficiency.</p>
+          <p><strong>Approach:</strong> Compared binding energies using SwissDock and Python scripts.</p>
+          <p><strong>Results:</strong> Improved binding affinity by 20% for top candidates.</p>
+          <div class="media-container">
+            <img src="herbicide_design2.jpg" alt="Herbicide Binding Analysis">
+          </div>
+          <a href="https://github.com/thokhir/herbicide-design2" class="btn btn-primary">View Code</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section alt">
+    <div class="container">
+      <h2>Experience</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Research Associate - SRKR Engineering College</h3>
+          <p class="text-muted">Nov 2020 - Present, India</p>
+          <ul class="list">
+            <li>Commissioned analytical instruments (HPLC, Spectrophotometer) per EU standards.</li>
+            <li>Trained teams in APHA sampling and analysis.</li>
+            <li>Built Power BI dashboards and led ML model selection for water quality.</li>
+            <li>Developed Social Vulnerability Index (SVI) methodology in Python.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Junior Research Scientist - Eesavyasa Technologies Pvt. Ltd.</h3>
+          <p class="text-muted">Nov 2017 - Apr 2019, Hyderabad, India</p>
+          <ul class="list">
+            <li>Developed 6 rapid water testing kits with SOPs.</li>
+            <li>Prototyped devices like room fumigator and ozone-based vegetable washer.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Project Assistant II & Researcher - CSIR-IICT</h3>
+          <p class="text-muted">Dec 2006 - Sep 2016, Hyderabad, India</p>
+          <ul class="list">
+            <li>Collaborated with King’s College London on cancer drug screening.</li>
+            <li>Patented bioprocess for acrylic acid conversion.</li>
+            <li>Conducted target-based screening and mechanistic assays.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="grid two-cols">
+        <div class="card">
+          <h3>Data Analysis & Dashboards</h3>
+          <p>Interactive Power BI reports, ETL workflows, and KPI design.</p>
+        </div>
+        <div class="card">
+          <h3>Machine Learning</h3>
+          <p>Feature engineering and model selection for classification/regression.</p>
+        </div>
+        <div class="card">
+          <h3>Bio/Cheminformatics</h3>
+          <p>Docking, ADMET/QSAR, descriptor pipelines, visual summaries.</p>
+        </div>
+        <div class="card">
+          <h3>R&D Support</h3>
+          <p>Process optimization, experimental design, clean SOPs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section alt">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Ph.D., Biotechnology</h3>
+          <p class="text-muted">CSIR-IICT & Acharya Nagarjuna University - 2019, Hyderabad, India</p>
+        </div>
+        <div class="card">
+          <h3>Drug Delivery Exchange</h3>
+          <p class="text-muted">King’s College London - 2013, UK</p>
+        </div>
+        <div class="card">
+          <h3>M.Sc. Biotechnology (84.7%)</h3>
+          <p class="text-muted">Bharathidasan University - 2006, Tiruchirapalli, India</p>
+        </div>
+        <div class="card">
+          <h3>B.Sc. Microbiology, Biochem, Chem (75.3%)</h3>
+          <p class="text-muted">Nagarjuna University - 2002, Guntur, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="innovations" class="section">
+    <div class="container">
+      <h2>Innovative Works & Products</h2>
+      <div class="grid two-cols">
+        <div class="card">
+          <h3>Social Vulnerability Index (SVI) Model</h3>
+          <p>Developed a Python-based SVI model integrating physico-chemical and biological water quality data for environmental policy. Impact: Informed policy for 3 regions.</p>
+        </div>
+        <div class="card">
+          <h3>AI-Driven Herbicide Design</h3>
+          <p>Innovated AI-based herbicide molecules with enhanced binding and toxicity profiles using SwissDock and Python.</p>
+        </div>
+        <div class="card">
+          <h3>Microemulsion Delivery System</h3>
+          <p>Designed a 5-fold more effective microemulsion for anticancer drug delivery during Ph.D. research.</p>
+        </div>
+        <div class="card">
+          <h3>Room & Apron Fumigator Prototypes</h3>
+          <p>Prototyped a room fumigator using scrap and a wearable apron fumigation device for sterilization.</p>
+        </div>
+        <div class="card">
+          <h3>Ozone-Based Vegetable Washer Prototype</h3>
+          <p>Created a prototype to remove pesticides and fertilizers from vegetables.</p>
+        </div>
+        <div class="card">
+          <h3>Rapid Water Testing Kits</h3>
+          <p>Developed and validated 6 kits for detecting pathogenic bacteria in drinking water, with manufacturing-ready SOPs.</p>
+        </div>
+        <div class="card">
+          <h3>Microbial Bioconversion Process</h3>
+          <p>Patented process for converting acrylonitrile to acrylic acid using HPLC-validated methods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog" class="section alt">
+    <div class="container">
+      <h2>Blog & Thought Leadership</h2>
+      <div class="grid two-cols">
+        <div class="card">
+          <h3>AI in Herbicide Design: Challenges and Wins</h3>
+          <p>Exploring how AI tools like Grok and SwissDock streamline herbicide development. <a href="blog/herbicide-ai.html">Read More</a></p>
+        </div>
+        <div class="card">
+          <h3>Building Impactful Water Quality Dashboards</h3>
+          <p>Lessons from creating Power BI dashboards for environmental monitoring. <a href="blog/water-quality-dashboards.html">Read More</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="text-muted">Open to roles and freelance engagements. Share a brief, and I’ll respond quickly.</p>
+      <div class="contact-links">
+        <a href="mailto:sktbasha22@gmail.com"><i class="fas fa-envelope"></i> sktbasha22@gmail.com</a>
+        <a href="tel:+917671856965"><i class="fas fa-phone"></i> +91-7671856965</a>
+        <a href="https://linkedin.com/in/thokhir" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Dr. Thokhir Basha Shaik • Built with HTML/CSS/JS</p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to Top"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    // Toggle mobile menu
+    document.querySelector('.menu-btn').addEventListener('click', () => {
+      document.querySelector('.nav').classList.toggle('active');
+    });
+
+    // Scroll-to-top button
+    const scrollTopBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('show', window.scrollY > 300);
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Project search filter
+    const searchInput = document.querySelector('#project-search');
+    const projects = document.querySelectorAll('.project');
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      projects.forEach(project => {
+        const text = project.textContent.toLowerCase();
+        project.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
