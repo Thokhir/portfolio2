@@ -2,172 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Thokhir Basha Shaik - Portfolio</title>
-  <meta name="description" content="Portfolio of Dr. Thokhir Basha Shaik, expert in bioinformatics, data analytics, biotechnology, and innovative research.">
-  <meta name="keywords" content="bioinformatics, data analytics, biotechnology, drug discovery, AI, ML, R&D, water quality">
-  <meta name="author" content="Dr. Thokhir Basha Shaik">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Thokhir</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/4c6f8d1e7b.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- Header -->
   <header class="header">
-    <div class="container header-inner">
-      <h1 class="brand">Dr. Thokhir Basha Shaik</h1>
-      <button id="menuBtn" class="menu-btn" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav id="nav" class="nav">
+    <div class="header-inner container">
+      <div class="brand">Thokhir</div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <nav class="nav" id="navMenu">
         <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
         <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
         <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-        <a href="#services"><i class="fas fa-cogs"></i> Services</a>
         <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-        <a href="#innovations"><i class="fas fa-lightbulb"></i> Innovations</a>
         <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="hero" class="hero">
+  <section class="hero">
     <div class="overlay"></div>
-    <div class="container hero-content text-center">
-      <h1>Dr. Thokhir Basha Shaik</h1>
-      <p class="hero-subtext">11+ years in data analytics, bioinformatics, and biotechnology. Expert in dashboards, ML prototypes, and cheminformatics for Pharma, Biotech, and Environmental Health.</p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-cta">Get in Touch</a>
-        <a href="assets/Dr-Thokhir-Basha-Shaik-CV.pdf" class="btn btn-primary" download>
-          <i class="fas fa-download"></i> Download CV
-        </a>
+    <div class="hero-content">
+      <h1 class="fade-in">Hi, I'm Thokhir</h1>
+      <p class="hero-subtext fade-in">Data Analyst | Bioinformatics Enthusiast | Innovator</p>
+      <a href="resume.pdf" class="btn btn-primary fade-in" download>Download CV</a>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section alt">
+    <h2><i class="fas fa-tools"></i> Skills</h2>
+    <div class="grid two-cols">
+      <div class="skill">
+        <h3>Python</h3>
+        <div class="skill-bar"><div class="skill-level" style="width:85%">85%</div></div>
+      </div>
+      <div class="skill">
+        <h3>Power BI</h3>
+        <div class="skill-bar"><div class="skill-level" style="width:80%">80%</div></div>
+      </div>
+      <div class="skill">
+        <h3>SQL</h3>
+        <div class="skill-bar"><div class="skill-level" style="width:75%">75%</div></div>
+      </div>
+      <div class="skill">
+        <h3>R Programming</h3>
+        <div class="skill-bar"><div class="skill-level" style="width:65%">65%</div></div>
       </div>
     </div>
   </section>
 
-  <main>
-    <!-- Skills -->
-    <section id="skills" class="section">
-      <div class="container">
-        <h2><i class="fas fa-tools"></i> Skills</h2>
-        <div class="grid two-cols">
-          <div class="card">
-            <h3>Data Analysis & Visualization</h3>
-            <div class="skill-bar"><span style="width: 90%"></span></div>
-            <p>SQL, Power BI (DAX, Power Query), Python (Pandas, scikit-learn), R (tidyverse, ggplot2).</p>
-          </div>
-          <div class="card">
-            <h3>Bio/Cheminformatics</h3>
-            <div class="skill-bar"><span style="width: 85%"></span></div>
-            <p>Docking, ADMET, QSAR, BLAST, FASTA, PyMOL, ChimeraX, SwissADME, NCBI, UniProt, PDB.</p>
-          </div>
-          <div class="card">
-            <h3>Machine Learning & R&D</h3>
-            <div class="skill-bar"><span style="width: 80%"></span></div>
-            <p>Regression, ANN, Random Forest, Experimental Design, QC Protocols, SOP Development.</p>
-          </div>
-        </div>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+    <input type="text" class="project-search" placeholder="Search projects..." onkeyup="filterProjects()"/>
+    <div class="grid two-cols" id="projectList">
+      <div class="card project fade-in">
+        <img src="assets/project1.jpg" alt="Agrispray Device">
+        <h3>Agrispray Device</h3>
+        <p>Developed an automated fertilizer spraying system with EEE students.</p>
+        <p><strong>Impact:</strong> Increased efficiency of spraying by 40%.</p>
       </div>
-    </section>
+      <div class="card project fade-in">
+        <img src="assets/project2.jpg" alt="Self-Sealing Concrete">
+        <h3>Self-Sealing Concrete</h3>
+        <p>Designed bacterial spores-based concrete for self-healing cracks.</p>
+        <p><strong>Impact:</strong> Reduced maintenance costs by ~25%.</p>
+      </div>
+      <div class="card project fade-in">
+        <img src="assets/project3.jpg" alt="Aquaculture Organic Feed">
+        <h3>Aquaculture Organic Feed</h3>
+        <p>Prepared organic fish feed from vegetable & fruit waste.</p>
+        <p><strong>Impact:</strong> Sustainable, low-cost alternative to synthetic feed.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section alt">
-      <div class="container">
-        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-        <input type="text" id="projectSearch" placeholder="Search projects..." class="project-search">
-        <div id="projectList" class="grid two-cols">
-          <div class="card project" data-tags="excel water quality">
-            <h3>Water Quality Dashboard</h3>
-            <p>Excel dashboard for DWQI, IWQI, AWQI, LWQI. <strong>Impact:</strong> Enabled identification of seasonal water risks.</p>
-            <div class="media-container">
-              <video controls>
-                <source src="assets/water-quality-dashboard.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <div class="card project" data-tags="power bi water levels">
-            <h3>Chennai Reservoir Water Levels</h3>
-            <p>Power BI dashboard (2005–2019). <strong>Impact:</strong> Supported urban water resource planning.</p>
-            <div class="media-container">
-              <video controls>
-                <source src="assets/chennai-reservoirs.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          <!-- Add remaining projects in same pattern -->
-        </div>
+  <!-- Experience -->
+  <section id="experience" class="section alt">
+    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+    <div class="grid two-cols">
+      <div class="card fade-in">
+        <h3>Biotechnika Data Science Hands-on</h3>
+        <p>Applied bioinformatics, AI/ML, and computational biology techniques.</p>
       </div>
-    </section>
+      <div class="card fade-in">
+        <h3>Workshop – Business Model Canvas</h3>
+        <p>Created a BMC for a local coconut food chain (MHRD Innovation Cell, AICTE).</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section">
-      <div class="container">
-        <h2><i class="fas fa-briefcase"></i> Experience</h2>
-        <div class="grid two-cols">
-          <div class="card">
-            <h3>Research Associate - SRKR Engineering College</h3>
-            <p class="text-muted">Nov 2020 - Present</p>
-            <ul class="list">
-              <li>Commissioned analytical instruments per EU standards.</li>
-              <li>Built Power BI dashboards & led ML model selection.</li>
-              <li><strong>Impact:</strong> Improved water analysis accuracy by 30%.</li>
-            </ul>
-          </div>
-          <!-- Other jobs in same pattern -->
-        </div>
+  <!-- Education -->
+  <section id="education" class="section">
+    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+    <div class="grid two-cols">
+      <div class="card fade-in">
+        <h3>M.Sc. Biotechnology</h3>
+        <p>Specialized in Bioinformatics and Data Science.</p>
       </div>
-    </section>
+      <div class="card fade-in">
+        <h3>Workshops & Certifications</h3>
+        <p>SQL, Python, R, Power BI, GROMACS simulations.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container text-center">
-        <h2><i class="fas fa-envelope"></i> Contact</h2>
-        <p class="text-muted">Open to roles and freelance engagements.</p>
-        <div class="contact-links">
-          <a class="btn btn-primary" href="mailto:sktbasha22@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-          <a class="btn btn-primary" href="https://wa.me/7671856965"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/thokhir-basha-shaik-m-sc-ph-d-59498416"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- Contact -->
+  <section id="contact" class="section alt">
+    <h2><i class="fas fa-envelope"></i> Contact</h2>
+    <div class="contact-links">
+      <a href="mailto:your@email.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Email</a>
+      <a href="https://wa.me/yourwhatsapplink" class="btn btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Name" required/>
+      <input type="email" placeholder="Email" required/>
+      <textarea placeholder="Message" rows="5" required></textarea>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Dr. Thokhir Basha Shaik • Built with HTML/CSS/JS</p>
-    </div>
+    <p>© <span id="year"></span> Thokhir. All Rights Reserved.</p>
   </footer>
 
-  <button id="scrollTop" class="scroll-top"><i class="fas fa-arrow-up"></i></button>
+  <!-- Scroll Top -->
+  <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
-  <script src="app.js"></script>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const menuBtn = document.getElementById("menuBtn");
-    const nav = document.getElementById("nav");
-    menuBtn.addEventListener("click", () => nav.classList.toggle("active"));
-
-    // Scroll top button
-    const scrollTopBtn = document.getElementById("scrollTop");
-    window.addEventListener("scroll", () => {
-      scrollTopBtn.classList.toggle("show", window.scrollY > 300);
-    });
-    scrollTopBtn.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
-
-    // Project search
-    const search = document.getElementById("projectSearch");
-    const list = document.getElementById("projectList");
-    search.addEventListener("input", () => {
-      const q = search.value.toLowerCase();
-      list.querySelectorAll(".project").forEach(card => {
-        const text = card.innerText.toLowerCase();
-        const tags = card.dataset.tags || "";
-        card.style.display = (text.includes(q) || tags.includes(q)) ? "" : "none";
-      });
-    });
-  </script>
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
